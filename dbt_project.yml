@@ -35,5 +35,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   jaffle_shop:
     +materialized: view
+    +schema: public  # Replace with your actual dataset
 
     
