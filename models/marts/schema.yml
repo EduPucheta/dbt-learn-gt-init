@@ -5,9 +5,8 @@ models:
     description: "Aggregated average ratings by survey type"
     columns:
       - name: survey
-        description: Type of survey
+        description: Type of survey (may contain null values for reviews without survey type)
         tests:
-          - not_null
           - unique
       - name: average_rating
         description: Average rating for the survey type
