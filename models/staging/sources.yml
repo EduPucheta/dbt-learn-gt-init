@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw data from source system
+    schema: public
+    tables:
+      - name: reviews
+        description: Customer review data with ratings by survey type
+        columns:
+          - name: survey
+            description: Type of survey
+          - name: rating
+            description: Rating value
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
+
