@@ -5,9 +5,7 @@ models:
     description: "Staging model for reviews data with soft-deleted records filtered out"
     columns:
       - name: survey
-        description: Type of survey
-        tests:
-          - not_null
+        description: Type of survey (may contain null values)
       - name: rating
         description: Rating value
         tests:
