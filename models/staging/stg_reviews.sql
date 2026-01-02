@@ -6,8 +6,6 @@
 
 select
     survey,
-    rating,
-    _fivetran_deleted
+    rating
 from {{ source('raw', 'reviews') }}
-where coalesce(_fivetran_deleted, false) = false
 

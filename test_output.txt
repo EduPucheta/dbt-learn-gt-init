@@ -1,0 +1,26 @@
+[0m15:06:43  Running with dbt=1.11.2
+[0m15:07:07  Registered adapter: bigquery=1.11.0
+[0m15:07:10  Found 2 models, 5 data tests, 1 source, 675 macros
+[0m15:07:10  
+[0m15:07:10  Concurrency: 1 threads (target='dev')
+[0m15:07:10  
+[0m15:07:11  1 of 3 START test accepted_values_stg_reviews_rating__1__2__3__4__5 ............ [RUN]
+[0m15:07:13  BigQuery adapter: https://console.cloud.google.com/bigquery?project=feedbackr-446321&j=bq:US:00e39112-a4fa-461b-b478-5486c5634e99&page=queryresults
+[0m15:07:13  1 of 3 ERROR accepted_values_stg_reviews_rating__1__2__3__4__5 ................. [[31mERROR[0m in 2.11s]
+[0m15:07:13  2 of 3 START test assert_stg_reviews_rating_positive ........................... [RUN]
+[0m15:07:17  2 of 3 PASS assert_stg_reviews_rating_positive ................................. [[32mPASS[0m in 3.19s]
+[0m15:07:17  3 of 3 START test not_null_stg_reviews_rating .................................. [RUN]
+[0m15:07:19  3 of 3 PASS not_null_stg_reviews_rating ........................................ [[32mPASS[0m in 2.87s]
+[0m15:07:19  
+[0m15:07:19  Finished running 3 data tests in 0 hours 0 minutes and 9.95 seconds (9.95s).
+[0m15:07:20  
+[0m15:07:20  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m15:07:20  
+[0m15:07:20  [31mFailure in test accepted_values_stg_reviews_rating__1__2__3__4__5 (models\staging\schema.yml)[0m
+[0m15:07:20    Database Error in test accepted_values_stg_reviews_rating__1__2__3__4__5 (models\staging\schema.yml)
+  No matching signature for operator IN for argument types BIGNUMERIC and {STRING} at [27:23]
+  compiled code at target\run\jaffle_shop\models\staging\schema.yml\accepted_values_stg_reviews_rating__1__2__3__4__5.sql
+[0m15:07:20  
+[0m15:07:20    compiled code at target\compiled\jaffle_shop\models\staging\schema.yml\accepted_values_stg_reviews_rating__1__2__3__4__5.sql
+[0m15:07:20  
+[0m15:07:20  Done. PASS=2 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=3
