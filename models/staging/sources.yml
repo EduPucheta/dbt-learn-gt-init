@@ -16,6 +16,7 @@ sources:
           - name: _fivetran_deleted
             description: Fivetran soft delete flag
       - name: profiles
+      - name: surveys
         description: User profiles data
         columns:
           - name: id
