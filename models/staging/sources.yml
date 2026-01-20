@@ -15,4 +15,28 @@ sources:
             description: Rating value
           - name: _fivetran_deleted
             description: Fivetran soft delete flag
-
+      - name: profiles
+        description: User profiles data
+        columns:
+          - name: id
+            description: Primary key
+          - name: name
+            description: User's name
+          - name: email
+            description: User's email
+          - name: image
+            description: User's profile image
+          - name: customer_id
+            description: Stripe customer ID
+          - name: price_id
+            description: Stripe price ID
+          - name: has_access
+            description: Whether user has access
+          - name: created_at
+            description: Creation timestamp
+          - name: updated_at
+            description: Update timestamp
+          - name: plan
+            description: User's plan
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag

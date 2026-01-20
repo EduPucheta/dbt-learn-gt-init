@@ -16,4 +16,17 @@ models:
                 quote: false
       - name: _fivetran_deleted
         description: Fivetran soft delete flag
-
+  - name: stg_profiles
+    description: "Staging model for user profiles"
+    columns:
+      - name: user_id
+        description: Primary key for users
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: User's name
+      - name: email
+        description: User's email
+      - name: plan
+        description: User's subscription plan
