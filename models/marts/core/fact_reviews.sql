@@ -3,7 +3,7 @@
 select
     r.survey,
     r.rating,
-    s.survey_id
+    s.user_id
 from {{ ref('stg_reviews') }} r
-left join {{ ref('stg_surveys') }} s on r.survey = s.survey_id
+left join {{ ref('stg_surveys') }} s on cast(r.survey as string) = cast(s.survey_id as string)
 

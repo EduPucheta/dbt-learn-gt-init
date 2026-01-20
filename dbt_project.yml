@@ -39,5 +39,3 @@ models:
     marts:
       +materialized: table
     +schema: public  # Replace with your actual dataset 
-
-    
