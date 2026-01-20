@@ -22,3 +22,12 @@ models:
         description: "Email address of the user"
       - name: plan
         description: "Subscription plan"
+  - name: fact_reviews
+    description: "Fact table for reviews data"
+    columns:
+      - name: survey
+        description: Type of survey (may contain null values for reviews without survey type)
+      - name: rating
+        description: Rating value
+        tests:
+          - not_null

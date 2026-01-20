@@ -12,15 +12,5 @@ models:
         description: Average rating for the survey type
         tests:
           - not_null
-  - name: fact_reviews
-    description: "Fact table for reviews data"
-    columns:
-      - name: survey
-        description: Type of survey (may contain null values for reviews without survey type)
-        tests:
-          - unique
-      - name: rating
-        description: Rating value
-        tests:
-          - not_null
+
 
