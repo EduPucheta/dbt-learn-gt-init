@@ -11,6 +11,9 @@ models:
           - not_null
       - name: name
         description: "Name of the user"
+        tests:
+          - unique
+          - not_null
       - name: email
         description: "Email address of the user"
       - name: plan
