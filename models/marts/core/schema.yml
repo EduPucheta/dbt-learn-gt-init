@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "A dimension table for users"
+    columns:
+      - name: user_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Name of the user"
+      - name: email
+        description: "Email address of the user"
+      - name: plan
+        description: "Subscription plan"
