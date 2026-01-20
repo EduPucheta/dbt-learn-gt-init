@@ -14,11 +14,10 @@ renamed as (
         name,
         email,
         image,
-        customer_id,
-        price_id,
+      
+     
         has_access,
-        created_at,
-        updated_at,
+
         plan,
         _fivetran_deleted
 
