@@ -18,7 +18,7 @@ models:
       - name: survey
         description: Type of survey (may contain null values for reviews without survey type)
         tests:
-          - not_null
+          - unique
       - name: rating
         description: Rating value
         tests:
