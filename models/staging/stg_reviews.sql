@@ -6,6 +6,7 @@
 
 select
     survey,
-    rating
+    rating,
+    created_at
 from {{ source('raw', 'reviews') }}
 
