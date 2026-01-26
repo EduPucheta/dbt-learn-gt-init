@@ -8,5 +8,5 @@ select
     survey,
     rating,
     created_at
-from {{ source('raw', 'reviews') }}
+from {{ source('raw', 'reviews') }} 
 
