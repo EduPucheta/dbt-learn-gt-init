@@ -43,3 +43,11 @@ sources:
             description: User's plan
           - name: _fivetran_deleted
             description: Fivetran soft delete flag
+  - name: google_search_console
+    description: Google Search Console data
+    database: "{{ target.database }}"
+    schema: google_search_console
+    tables:
+      - name: site_report_by_site
+        description: Do not know this table yet
+            
