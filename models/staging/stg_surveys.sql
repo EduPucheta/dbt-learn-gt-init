@@ -6,12 +6,13 @@ with source as (
 
 renamed as (
 
-    select
+    select 
         id as survey_id,
     user_id
 
-    from source  
+    from source   
 
 )
 
 select * from renamed
+ 

@@ -2,27 +2,28 @@
 {{ config(materialized='view') }}
 
 with source as (
+ 
+    select * from {{ source('raw', 'profiles') }} 
 
-    select * from {{ source('raw', 'profiles') }}
+), 
+   
+ renamed as (
 
-),
-
-renamed as (
-
-    select
+    select 
         id as user_id,
-        name,
+        name, 
         email,
         image,
       
      
         has_access,
+  
+        plan,  
+        _fivetran_deleted 
 
-        plan,
-        _fivetran_deleted
-
-    from source
+    from source 
 
 )
 
 select * from renamed
+ 
