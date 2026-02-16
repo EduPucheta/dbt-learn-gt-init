@@ -2,7 +2,7 @@
 {{ config(materialized='view') }}
 
 with source as (
-
+ 
     select * from {{ source('raw', 'profiles') }}
 
 ),
@@ -18,7 +18,7 @@ renamed as (
      
         has_access,
 
-        plan,
+        plan, 
         _fivetran_deleted
 
     from source
@@ -26,3 +26,4 @@ renamed as (
 )
 
 select * from renamed
+ 
