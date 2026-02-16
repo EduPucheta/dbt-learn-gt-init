@@ -10,7 +10,7 @@ renamed as (
         id as survey_id,
     user_id
 
-    from source 
+    from source  
 
 )
 
