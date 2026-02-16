@@ -7,7 +7,7 @@ with source as (
 
 ), 
   
-renamed as (
+ renamed as (
 
     select
         id as user_id,
@@ -17,8 +17,8 @@ renamed as (
       
      
         has_access,
-
-        plan, 
+ 
+        plan,  
         _fivetran_deleted
 
     from source 
