@@ -5,7 +5,7 @@
 }}  
 
 select 
-    survey,
+    survey, 
     avg(rating) as average_rating 
 from {{ ref('stg_reviews') }} 
 group by survey
