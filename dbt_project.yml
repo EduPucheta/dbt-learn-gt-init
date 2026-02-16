@@ -24,6 +24,12 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
+dispatch:
+  - macro_namespace: dbt #with this configuration it chooses our custom macro for macros/generate_schema_name.sql
+    search_order:
+      - analytics
+      - dbt
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
