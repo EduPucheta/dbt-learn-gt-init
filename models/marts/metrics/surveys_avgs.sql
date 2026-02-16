@@ -1,12 +1,13 @@
 {{
   config(
-    materialized='table'
+    materialized='table' 
   )
-}}
+}}  
 
-select
+select 
     survey,
-    avg(rating) as average_rating
-from {{ ref('stg_reviews') }}
+    avg(rating) as average_rating 
+from {{ ref('stg_reviews') }} 
 group by survey
 order by survey asc
+ 
