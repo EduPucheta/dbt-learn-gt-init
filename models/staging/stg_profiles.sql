@@ -3,7 +3,7 @@
 
 with source as (
  
-    select * from {{ source('raw', 'profiles') }}
+    select * from {{ source('raw', 'profiles') }} 
 
 ), 
    
@@ -17,9 +17,9 @@ with source as (
       
      
         has_access,
- 
+  
         plan,  
-        _fivetran_deleted
+        _fivetran_deleted 
 
     from source 
 
