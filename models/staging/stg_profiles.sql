@@ -6,12 +6,12 @@ with source as (
     select * from {{ source('raw', 'profiles') }}
 
 ), 
-  
+   
  renamed as (
 
-    select
+    select 
         id as user_id,
-        name,
+        name, 
         email,
         image,
       
