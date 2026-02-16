@@ -6,19 +6,19 @@ with source as (
     select * from {{ source('raw', 'profiles') }}
 
 ), 
-  
-renamed as (
+   
+ renamed as (
 
-    select
+    select 
         id as user_id,
-        name,
+        name, 
         email,
         image,
       
      
         has_access,
-
-        plan, 
+ 
+        plan,  
         _fivetran_deleted
 
     from source 
