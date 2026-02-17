@@ -4,7 +4,7 @@
 with source as (
  
     select * from {{ source('raw', 'profiles') }} 
-
+ 
 ), 
    
  renamed as (
