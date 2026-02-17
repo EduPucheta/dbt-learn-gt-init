@@ -8,7 +8,7 @@ with source as (
 ), 
    
  renamed as (
-
+ 
     select 
         id as user_id,
         name, 
