@@ -1,5 +1,5 @@
 select
     survey,
-    rating
+    rating 
 from {{ ref('stg_reviews') }}
 where rating < 0
