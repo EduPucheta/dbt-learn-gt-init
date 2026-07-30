@@ -7,7 +7,7 @@ def model(dbt, session):
         materialized="table",
     )
 
-    reviews = dbt.ref("fact_reviews")
+    reviews = dbt.ref("fact_reviews").withColumn("rating", F.col("rating").cast("double"))
 
     return (
         reviews.filter(F.col("user_id").isNotNull())

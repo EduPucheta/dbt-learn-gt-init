@@ -2,7 +2,7 @@
 
 select
     r.survey,
-    r.rating,
+    cast(r.rating as int64) as rating,
     s.user_id,
     u.plan,
     {{ function('rating_to_sentiment') }}(cast(r.rating as int64)) as rating_sentiment,
