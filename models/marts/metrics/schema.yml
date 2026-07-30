@@ -13,4 +13,27 @@ models:
         tests:
           - not_null
 
+  - name: user_review_summary
+    description: "Per-user review summary (Python/PySpark model, runs on Dataproc). Aggregates fact_reviews into review counts, average rating, and NPS-style sentiment breakdown per user."
+    columns:
+      - name: user_id
+        description: Foreign key to dim_users
+        tests:
+          - not_null
+          - unique
+      - name: plan
+        description: User's subscription plan
+      - name: review_count
+        description: Total number of reviews submitted by the user
+        tests:
+          - not_null
+      - name: average_rating
+        description: Average rating across the user's reviews
+      - name: promoter_count
+        description: Count of the user's reviews classified as 'promoter' (rating >= 4)
+      - name: passive_count
+        description: Count of the user's reviews classified as 'passive' (rating = 3)
+      - name: detractor_count
+        description: Count of the user's reviews classified as 'detractor' (rating <= 2)
+
 

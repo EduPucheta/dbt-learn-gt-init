@@ -30,3 +30,80 @@ models:
         description: User's email
       - name: plan
         description: User's subscription plan
+  - name: stg_spaces
+    description: "Staging model for workspaces/organizations owned by a profile"
+    columns:
+      - name: space_id
+        description: Primary key for spaces
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: Foreign key to profiles
+      - name: organization_name
+        description: Name of the organization
+      - name: organization_url
+        description: URL of the organization
+  - name: stg_plans
+    description: "Staging model for subscription plan definitions"
+    columns:
+      - name: plan_id
+        description: Primary key for plans
+        tests:
+          - unique
+          - not_null
+      - name: plan_name
+        description: Name of the plan
+      - name: plan_monthly_token_quota
+        description: Monthly token quota allowed by the plan
+      - name: plan_monthly_responses
+        description: Monthly survey response quota allowed by the plan
+  - name: stg_ab_tests
+    description: "Staging model for A/B tests configured for a space"
+    columns:
+      - name: ab_test_id
+        description: Primary key for A/B tests
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: Foreign key to profiles
+      - name: space_id
+        description: Foreign key to spaces
+      - name: name
+        description: Name of the A/B test
+      - name: is_active
+        description: Whether the A/B test is currently active
+  - name: stg_presale_subscribers
+    description: "Staging model for presale subscriber signups"
+    columns:
+      - name: subscriber_id
+        description: Primary key for presale subscribers
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: Subscriber's email
+      - name: subscribed_at
+        description: Timestamp the subscriber signed up
+  - name: stg_survey_devices
+    description: "Staging model for devices a survey is configured to display on"
+    columns:
+      - name: survey_id
+        description: Foreign key to surveys
+        tests:
+          - not_null
+      - name: device_name
+        description: Name of the targeted device
+  - name: stg_user_quotas
+    description: "Staging model for per-user usage quotas and token consumption"
+    columns:
+      - name: user_id
+        description: Foreign key to profiles, one row per user
+        tests:
+          - unique
+          - not_null
+      - name: tokens_used
+        description: Tokens consumed in the current period
+      - name: monthly_cap
+        description: Monthly token cap

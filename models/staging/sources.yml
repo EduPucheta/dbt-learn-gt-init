@@ -43,6 +43,108 @@ sources:
             description: User's plan
           - name: _fivetran_deleted
             description: Fivetran soft delete flag
+      - name: spaces
+        description: Workspaces/organizations owned by a profile
+        columns:
+          - name: id
+            description: Primary key
+          - name: profile_id
+            description: Foreign key to profiles
+          - name: organization_name
+            description: Name of the organization
+          - name: organization_url
+            description: URL of the organization
+          - name: created_at
+            description: Creation timestamp
+          - name: updated_at
+            description: Update timestamp
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
+      - name: plans
+        description: Subscription plan definitions
+        columns:
+          - name: id
+            description: Primary key
+          - name: plan_name
+            description: Name of the plan
+          - name: plan_monthly_token_quota
+            description: Monthly token quota allowed by the plan
+          - name: plan_monthly_responses
+            description: Monthly survey response quota allowed by the plan
+          - name: created_at
+            description: Creation timestamp
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
+      - name: ab_tests
+        description: A/B tests configured for a space
+        columns:
+          - name: id
+            description: Primary key
+          - name: user_id
+            description: Foreign key to profiles
+          - name: space_id
+            description: Foreign key to spaces
+          - name: name
+            description: Name of the A/B test
+          - name: description
+            description: Description of the A/B test
+          - name: target_url
+            description: URL the A/B test targets
+          - name: element_selector
+            description: CSS selector for the targeted element
+          - name: goal_type
+            description: Type of conversion goal
+          - name: goal_selector
+            description: CSS selector for the goal element
+          - name: device_targeting
+            description: JSON config for device targeting
+          - name: is_active
+            description: Whether the A/B test is currently active
+          - name: created_at
+            description: Creation timestamp
+          - name: updated_at
+            description: Update timestamp
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
+      - name: presale_subscribers
+        description: Subscribers who signed up before general availability
+        columns:
+          - name: id
+            description: Primary key
+          - name: email
+            description: Subscriber's email
+          - name: subscribed_at
+            description: Timestamp the subscriber signed up
+          - name: created_at
+            description: Creation timestamp
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
+      - name: survey_devices
+        description: Devices a survey is configured to display on
+        columns:
+          - name: survey_id
+            description: Foreign key to surveys
+          - name: device_name
+            description: Name of the targeted device
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
+      - name: user_quotas
+        description: Per-user usage quotas and token consumption
+        columns:
+          - name: user_id
+            description: Foreign key to profiles
+          - name: tokens_used
+            description: Tokens consumed in the current period
+          - name: monthly_cap
+            description: Monthly token cap
+          - name: quota_reset_date
+            description: Date the quota resets
+          - name: created_at
+            description: Creation timestamp
+          - name: updated_at
+            description: Update timestamp
+          - name: _fivetran_deleted
+            description: Fivetran soft delete flag
   - name: google_search_console
     description: Google Search Console data
     database: "{{ target.database }}"
