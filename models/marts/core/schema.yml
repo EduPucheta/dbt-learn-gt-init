@@ -39,3 +39,5 @@ models:
           - accepted_values:
               arguments:
                 values: ['promoter', 'passive', 'detractor']
+      - name: rating_description
+        description: "Human-readable label for the rating, from the rating_sentiment_map seed (see seeds/rating_sentiment_map.csv)"

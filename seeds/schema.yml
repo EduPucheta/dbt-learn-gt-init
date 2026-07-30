@@ -1,0 +1,25 @@
+version: 2
+
+seeds:
+  - name: rating_sentiment_map
+    description: "Static lookup mapping a 1-5 rating to its NPS-style sentiment bucket, mirroring the logic in functions/rating_to_sentiment.sql for use where the UDF isn't called (e.g. ad hoc analyses)."
+    columns:
+      - name: rating
+        description: Rating value (1-5)
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4, 5]
+                quote: false
+      - name: sentiment
+        description: NPS-style sentiment bucket
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['detractor', 'passive', 'promoter']
+                quote: true
+      - name: description
+        description: Human-readable label for the rating

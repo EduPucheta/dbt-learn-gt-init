@@ -1,0 +1,6 @@
+rating,sentiment,description
+1,detractor,Very dissatisfied
+2,detractor,Dissatisfied
+3,passive,Neutral
+4,promoter,Satisfied
+5,promoter,Very satisfied
