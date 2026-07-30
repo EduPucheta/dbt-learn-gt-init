@@ -40,6 +40,12 @@ This project runs on dbt Fusion (`dbt-fusion 2.0.0-preview.177`), which has **na
 - [ ] Add an `exposures.yml` describing a dashboard consuming `surveys_avgs`
 - [ ] Run `dbt docs generate` and review the DAG/lineage view
 
+## Ad hoc analyses (`analysis/`)
+The `analysis/` folder (wired up via `analysis-paths` in [dbt_project.yml](dbt_project.yml)) holds one-off reporting SQL that compiles with `ref()`/`source()` like a model but isn't part of the DAG — no materialization, no `schema.yml` tests/docs.
+- [x] Reference examples added: [nps_by_survey.sql](analysis/nps_by_survey.sql) (conditional aggregation / ratios via `countif`), [user_review_activity.sql](analysis/user_review_activity.sql) (window functions: `row_number`, `lag`, `avg() over`), [plan_review_summary.sql](analysis/plan_review_summary.sql) (join + group by across `dim_users`/`fact_reviews`)
+- [ ] Practice: run `dbt compile --select path:analysis` and inspect the compiled SQL under `target/compiled/.../analysis/`
+- [ ] Practice: once `user_quotas`/`plans` are wired up (see above), write an analysis joining them in for a quota-utilization-by-plan report
+
 ## Deployment / project mechanics
 - [ ] Add a `staging` target and confirm `generate_schema_name` / `generate_database_name` behavior with `dbt run --target staging`
 - [ ] Add tags (`tag: core`, `tag: metrics`) and practice selectors (`dbt build --select tag:core+`, `--select state:modified+`)
