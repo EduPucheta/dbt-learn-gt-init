@@ -3,6 +3,9 @@ version: 2
 models:
   - name: stg_reviews
     description: "Staging model for reviews data with soft-deleted records filtered out"
+    config:
+      grants:
+        roles/bigquery.dataViewer: ['user:eduardo@dynamicdata.agency']
     columns:
       - name: survey
         description: Type of survey (may contain null values)
