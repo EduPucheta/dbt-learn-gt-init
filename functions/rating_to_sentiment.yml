@@ -1,0 +1,9 @@
+functions:
+  - name: rating_to_sentiment
+    description: "Buckets a review rating into an NPS-style label: 1-2 detractor, 3 passive, 4-5 promoter."
+    arguments:
+      - name: rating
+        data_type: int64
+        description: The numeric review rating (1-5)
+    returns:
+      data_type: string

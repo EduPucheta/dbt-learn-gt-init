@@ -33,3 +33,9 @@ models:
         description: Rating value
         tests:
           - not_null
+      - name: rating_sentiment
+        description: "Rating bucketed into an NPS-style label via the `rating_to_sentiment` BigQuery UDF (see macros/udfs/rating_to_sentiment.sql)"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['promoter', 'passive', 'detractor']
