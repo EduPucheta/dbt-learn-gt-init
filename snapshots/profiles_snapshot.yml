@@ -1,0 +1,8 @@
+snapshots:
+  - name: profiles_snapshot
+    relation: source('raw', 'profiles')
+    config:
+      schema: snapshots
+      unique_key: id
+      strategy: timestamp
+      updated_at: updated_at
