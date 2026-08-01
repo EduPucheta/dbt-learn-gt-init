@@ -1,4 +1,8 @@
-Welcome to your new dbt project!
+## About this project
+
+This is the dbt analytics layer for **[Feedbackito](https://feedbackito.com)** (a feedback-widget SaaS product built on the [ShipFast](https://shipfa.st) + Supabase template — product repo: `shipfast-template-supabse`). Raw data is synced via Fivetran from the product's Supabase/Postgres database (reviews, profiles, surveys, spaces, plans, ab_tests, presale_subscribers, user_quotas) plus Google Search Console, and modeled here through staging → marts.
+
+It's a real personal project, not a throwaway sandbox — and it also doubles as hands-on practice for the **dbt Developer Certification**.
 
 ### Using the starter project
 
