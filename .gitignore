@@ -5,3 +5,12 @@ logs/
 dbt_internal_packages/
 dbt_packages/
 feedbackr-446321-3703124e285e.json
+
+# Vendored from dynamic-data-claude-skills (shared registry) — not this project's own
+# content, don't commit. .claude/skills/dbt/ is project-specific and IS tracked.
+.claude/skills/sql/
+.claude/skills/bigquery/
+.claude/skills/bigquery-cost-optimization/
+.claude/skills/bigquery-features/
+.claude/skills/bigquery-query-generation/
+.claude/skills/bigquery-schema-design/
